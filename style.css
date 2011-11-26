@@ -14,6 +14,12 @@ blockquote p {
 	font-style: italic;
 }
 
+pre {
+    margin:20px 10px;
+    padding: 10px;
+    overflow:auto;
+}
+
 img.right {
 	border: 1px solid #666;
 	padding: 3px;
@@ -25,12 +31,6 @@ img.left {
 	padding: 3px;
 	margin-right: 8px;
 }
-
-/* Class for clearing floats */
-
-.clear {
-	clear: both;
-}
  
 /* Remove border around linked images */
 
@@ -38,132 +38,40 @@ img {
 	border: 0;
 }
 
-/* =Typography
------------------------------------------------------------------------------*/
-
-body {
-	color: #444;
-	background: #EEEEEE;
-}
-
-/* =Structure
------------------------------------------------------------------------------*/
-
-#wrapper {
-	margin: 0 auto;
-	background: #fff;
-}
-
-#content {
-	text-align: left;
-}
-
-#primaryContent {
-	margin-bottom: 10px;
-}
-
-#secondaryContent {
-
-}
-
 /* =Headings
 -----------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+}
 
 h1 {
 	font-size: 2.0em;
-	color: #545454;
 }
 
 h2 {
     font-size: 1.75em;
-	color: #545454;
 }
 
 h3 {
 	font-size: 1.25em;
 }
 
-h1 a:link, h2 a:link, h3 a:link, h4 a:link {
-    color:#666;
-    font-weight:bold;
+h4 {
+	font-size: 1.1em;
 }
 
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
-    color:#aaa;
-    text-decoration:none;
+h5 {
+	font-size: 1em;
 }
 
-#site {
-
-}
-
-#rss {
-
-}
-
-#aside {
-
-}
-
-#commentheading {
-
-}
-
-/* =Links
------------------------------------------------------------------------------*/
-
-a:link {
-	color: #1177cc;
-	text-decoration: none;
-}
-
-a:visited {
-	color: #1177cc;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:active {
-	color: #1177cc;
-}
-
-#branding a {
-	border: none;
-}
-
-ul#tidbits a {
-	text-decoration: none;
-}
-
-/* =Masthead
------------------------------------------------------------------------------*/
-
-#masthead {
-	margin-top: 20px;
-}
-
-#masthead #branding h3 {
-	font-style: italic;
-}
-
-#branding {
-}
-
-/* =Main Nav
------------------------------------------------------------------------------*/
-
-ul#nav {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    margin:0 0 20px 0;
-    font-size:1.25em;
+h6 {
+	font-size: 1em;
 }
 
 ul#nav {
 	list-style-type: none;
+	margin:0 0 20px 0;
+    font-size:1.25em;
 }
 
 ul#nav li {
@@ -172,24 +80,24 @@ ul#nav li {
     display: inline;
 }
 
-
-ul#nav li a:link, ul#nav li a:visited {
-	
-	text-decoration: none;
-    padding: 0 20px;
-    color:#666;
-    font-weight:bold;
-}
-
-ul#nav li a:hover {
-	color: #aaa;
+#masthead {
+	margin-top: 20px;
 }
 
 /* =Primary Content
 -----------------------------------------------------------------------------*/
 
 #post-nav {
-	margin: 10px 0px;
+	margin: 15px 0px;
+	height: 2em;
+}
+
+#post-nav .right {
+    float: right;
+}    
+
+#post-nav .left {
+    float: left;
 }
 
 .cal {
@@ -203,13 +111,6 @@ ul#nav li a:hover {
 }
 .entry {
 	
-}
-
-.draft {
-	background: #FFF6BF;
-	color: #514721;
-	border-color: #FFD324;
-	padding: 5px;
 }
 
 .entry ul {
@@ -233,13 +134,7 @@ ul#nav li a:hover {
 }
 
 #pagenav a:link {
-	text-decoration: none;
 	padding: 2px;
-	color:#666;
-}
-
-#pagenav a:hover {
-	color: #aaa;
 }
 
 #content img {
@@ -288,16 +183,12 @@ ul#recentcomments li {
 #footer {
     margin-top: 20px;
 	height: 60px;
-	border-top: 1px solid #ccc;
 	padding-top: 5px;
 }
 
 #footer p {
 	text-align: center;
 }
-
-/* =Forms
------------------------------------------------------------------------------*/
 
 /* Removes fieldset borders. even on Opea 7 */
 
@@ -348,9 +239,7 @@ ul#commentlist {
 }
 
 .comment-content {
-	border: 1px solid #ccc;
 	padding: 4px;
-	background: #F5F5F5;
 }
 
 .comment-unapproved .comment-content {
@@ -358,8 +247,6 @@ ul#commentlist {
 }
 
 .comment-meta {
-	background: #ddd;
-	border: 1px solid #ccc;
 	padding: 4px;
 }
 
@@ -373,12 +260,7 @@ ul#commentlist {
 
 fieldset {
 	margin: 1em 0;
-
-
-/*  space out the fieldsets a little*/
 	padding: 1em;
-	border: 1px solid #ccc;
-	background-color: #F5F5F5
 }
 
 /* legend styling */
@@ -407,7 +289,6 @@ label .required {
 	right: 0;
 	font-size: small;
 	font-style: italic;
-	color: #760000;
 	padding-left: 35px;
 }
 
