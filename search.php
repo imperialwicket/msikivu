@@ -4,7 +4,7 @@
 	<div id="content">
 		<!--begin primary content-->
 		<?php $theme->display('sidebarone'); ?>
-		<div id="primaryContent" class="<?php echo $theme->get_config_option('msikivu__content_class'); ?> columns">
+		<div id="primaryContent" class="<?php echo $theme->get_config_option('content_class'); ?> columns">
 			<!--begin loop-->
 			<h2 class="prepend-2"><?php _e('Results for search of'); ?> "<?php echo Utils::htmlspecialchars( $criteria ); ?>"</h2>
 			<?php if (isset($post)) : ?>

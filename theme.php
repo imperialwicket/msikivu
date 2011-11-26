@@ -117,6 +117,12 @@ class Msikivu extends Theme
     {
         $ui = new FormUI( strtolower( get_class( $this ) ) );
         
+        $ui->append( 'select', 'theme_color', strtolower( get_class( $this ) ) . '__theme_color', _t( 'Color scheme:' ), 'optionscontrol_text' );
+			$ui->theme_color->options = array(  'gray.css' => 'gray',
+			                                    'custom.css' => 'custom',
+			                                    );
+			$ui->theme_color->helptext = _t( 'Choose a color scheme.' );
+			$ui->theme_color->class = 'clear';
 		$ui->append( 'text', 'sidebar_one_style', strtolower( get_class( $this ) ) . '__sidebar_one_class', _t( 'Sidebar One width class:' ), 'optionscontrol_text' );
 			$ui->sidebar_one_style->helptext = _t( 'Class for controlling width of sidebar one (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
 			$ui->sidebar_one_style->class = 'clear';
@@ -137,7 +143,7 @@ class Msikivu extends Theme
     }
 
     public function get_config_option($key){
-        return Options::get($key);
+        return Options::get( strtolower( get_class( $this ) ) . '__' . $key);
     }
 
 }
