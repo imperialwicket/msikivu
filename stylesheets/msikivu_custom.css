@@ -1,0 +1,175 @@
+/**
+ *
+ * Msikivu colors - Custom
+ *
+ * A Msikivu starter stylesheet for custom colors and theming. Commented values are from the msikivu_gray stylesheet.
+ *
+ */
+ 
+ 
+/**
+ * Fonts and body colors
+ */
+
+body{
+/*
+    font-family:'HelveticaNeue','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #444;
+	background: #EEEEEE;
+*/
+}
+
+/* Handle code blocks using pre - inverted color and monospace font */
+pre {
+/*
+    background: #666;
+    color: #ccc;
+    font-family:'Bitstream Vera Sans Mono','Courier New',monospace;
+*/
+}
+
+
+/** 
+ * Headings and linked headings
+ */
+
+h1, h2, h3, h4, h5, h6 {
+/*
+    color: #545454;
+*/
+}
+
+h1 a:link, h2 a:link, h3 a:link, h4 a:link {
+/*
+    color:#666;
+    font-weight:bold;
+*/
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+/*
+    color:#aaa;
+    text-decoration:none;
+*/
+}
+
+
+/** 
+ * Links
+ */
+
+a:link, a:visited, a:active{
+/*
+	color: #1177cc;
+	text-decoration: none;
+*/
+}
+
+a:hover {
+/*
+	text-decoration: underline;
+*/
+}
+
+
+/**
+ * Main navigation area
+ */
+
+ul#nav {
+/*
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; 
+*/
+}
+
+ul#nav li a:link, ul#nav li a:visited {
+/*
+	text-decoration: none;
+    padding: 0 20px;
+    color:#666;
+    font-weight:bold;
+*/
+}
+
+ul#nav li a:hover {
+/*
+	color: #aaa;
+*/
+}
+
+
+/**
+ * Theme/Habari-specifc elements
+ */
+
+#branding a {
+/*
+	border: none;
+*/
+}
+
+ul#tidbits a {
+/*
+	text-decoration: none;
+*/
+}
+
+#masthead #branding h3 {
+/*
+	font-style: italic;
+*/
+}
+
+.draft {
+/*
+	background: #ccc;
+	color: #444;
+	border-color: #444;
+	padding: 5px;
+*/
+}
+
+.ping-meta {
+/*
+	background: #ddd;
+	border: 1px solid #ccc;
+*/
+}	
+
+.comment-content {
+/*
+	border: 1px solid #ccc;
+	background: #F5F5F5;
+*/
+}
+
+.comment-meta {
+/*
+	background: #ddd;
+	border: 1px solid #ccc;
+*/
+}
+
+fieldset {
+/*
+	border: 1px solid #ccc;
+	background-color: #F5F5F5
+*/
+}
+
+#branding {}
+
+#site {}
+
+#rss {}
+
+#aside {}
+
+#commentheading {}	
+
+#footer {
+/*
+	border-top: 1px solid #ccc;
+*/
+}
