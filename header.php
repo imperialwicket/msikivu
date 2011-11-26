@@ -13,8 +13,8 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/base.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/layout.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/skeleton.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/style.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/<?php echo $theme->get_config_option('theme_color'); ?>">
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/msikivu_style.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php Site::out_url( 'theme' ); ?>/stylesheets/msikivu_<?php echo $theme->get_config_option('theme_color'); ?>">
 	
 	<link rel="Shortcut Icon" href="<?php Site::out_url( 'theme' ); ?>/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php Site::out_url( 'theme' ); ?>/images/apple-icon-57x57.png">
