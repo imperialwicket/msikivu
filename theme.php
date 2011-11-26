@@ -115,17 +115,17 @@ class Msikivu extends Theme
     
     public function action_theme_ui()
     {
-        $ui = new FormUI( $this );
+        $ui = new FormUI( strtolower( get_class( $this ) ) );
         
-		$ui->append( 'text', 'sidebar_one_style', 'msikivu__sidebar_one_class', _t( 'Sidebar One width class:' ), 'optionscontrol_text' );
+		$ui->append( 'text', 'sidebar_one_style', strtolower( get_class( $this ) ) . '__sidebar_one_class', _t( 'Sidebar One width class:' ), 'optionscontrol_text' );
 			$ui->sidebar_one_style->helptext = _t( 'Class for controlling width of sidebar one (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
 			$ui->sidebar_one_style->class = 'clear';
 			$ui->sidebar_one_style->raw = 'true';
-		$ui->append( 'text', 'content_style', 'msikivu__content_class', _t( 'Content width class:' ), 'optionscontrol_text' );
+		$ui->append( 'text', 'content_style', strtolower( get_class( $this ) ) . '__content_class', _t( 'Content width class:' ), 'optionscontrol_text' );
 			$ui->content_style->helptext = _t( 'Class for controlling width of main content (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
 			$ui->content_style->class = 'clear';
 			$ui->content_style->raw = 'true';
-		$ui->append( 'text', 'sidebar_two_style', 'msikivu__sidebar_two_class', _t( 'Sidebar Two width class:' ), 'optionscontrol_text' );
+		$ui->append( 'text', 'sidebar_two_style', strtolower( get_class( $this ) ) . '__sidebar_two_class', _t( 'Sidebar Two width class:' ), 'optionscontrol_text' );
 			$ui->sidebar_two_style->helptext = _t( 'Class for controlling width of sidebar two (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
 			$ui->sidebar_two_style->class = 'clear';
 			$ui->sidebar_two_style->raw = 'true';
