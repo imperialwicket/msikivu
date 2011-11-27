@@ -6,19 +6,39 @@
 	
 	<author url="http://imperialwicket.com/">Nicholas Whittier</author>
 	
-	<version>1.7.0</version>
+	<version>1.7.1</version>
 	<url>http://imperialwicket.com/</url>
-	<description><![CDATA[Msikivu, Swahili for responsive, is based on the Mzingi theme for Habari and uses the <a href="http://www.getskeleton.com/">Skeleton</a> responsive boilerplate.  Msikivu is intended as a responsive starter theme for Habari.]]></description>
+	<description><![CDATA[<p>Msikivu, Swahili for responsive, is based on the Mzingi theme for Habari and uses the <a href="http://www.getskeleton.com/">Skeleton</a> responsive boilerplate.  Msikivu is intended as a responsive starter theme for Habari.</p><br />
+	<p>Msikivu includes a number of theme options for configurability without the necessity of code modifications.  Column widths,
+	a number of configurable areas, and a group of preconfigured color schemes are all available.</p><br />]]></description>
 	
 	<template_engine>rawphpengine</template_engine>
 
-	<copyright>2010</copyright>
+	<copyright>2011</copyright>
 	<areas>
+   		<area name="bannerone">
+			<description><![CDATA[Banner One]]></description>
+		</area>
+		<area name="bannertwo">
+			<description><![CDATA[Banner Two]]></description>
+		</area>
+		<area name="bannerthree">
+			<description><![CDATA[Banner Three]]></description>
+		</area>
    		<area name="sidebarone">
 			<description><![CDATA[Sidebar One]]></description>
 		</area>
 		<area name="sidebartwo">
 			<description><![CDATA[Sidebar Two]]></description>
+		</area>
+		<area name="footerone">
+			<description><![CDATA[Footer One]]></description>
+		</area>
+		<area name="footertwo">
+			<description><![CDATA[Footer Two]]></description>
+		</area>
+		<area name="footerthree">
+			<description><![CDATA[Footer Three]]></description>
 		</area>
 	</areas>
 </pluggable>
