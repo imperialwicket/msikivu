@@ -30,6 +30,22 @@ class Msikivu extends Theme
 		Format::apply_with_hook_params( 'more', 'post_content_excerpt', 'more',60, 1 );
 		// Format the calendar like date for home, entry.single and entry.multiple templates
 		Format::apply( 'format_date', 'post_pubdate_out','{Y}-{m}-{j}' );
+		
+		// Since the theme display depends on these values,
+		// set sensible defaults upon init if there are no options present.
+		if ( Options::get( strtolower( get_class( $this ) ) . '__theme_color' ) ){
+		    Options::set( strtolower( get_class( $this ) ) . '__theme_color' , 'custom.css');
+		}
+		if ( Options::get( strtolower( get_class( $this ) ) . '__sidebar_one_style' ) ){
+		    Options::set( strtolower( get_class( $this ) ) . '__sidebar_one_style' , 'four');
+		}
+		if ( Options::get( strtolower( get_class( $this ) ) . '__content_style' ) ){
+		    Options::set( strtolower( get_class( $this ) ) . '__content_style' , 'eight');
+		}
+		if ( Options::get( strtolower( get_class( $this ) ) . '__sidebar_two_style' ) ){
+		    Options::set( strtolower( get_class( $this ) ) . '__sidebar_two_style' , 'four');
+		}
+		    
 	}
 
 	/**
@@ -117,24 +133,33 @@ class Msikivu extends Theme
     {
         $ui = new FormUI( strtolower( get_class( $this ) ) );
         
-        $ui->append( 'select', 'theme_color', strtolower( get_class( $this ) ) . '__theme_color', _t( 'Color scheme:' ), 'optionscontrol_text' );
-			$ui->theme_color->options = array(  'gray.css' => 'gray',
-			                                    'custom.css' => 'custom',
-			                                    );
-			$ui->theme_color->helptext = _t( 'Choose a color scheme.' );
-			$ui->theme_color->class = 'clear';
-		$ui->append( 'text', 'sidebar_one_style', strtolower( get_class( $this ) ) . '__sidebar_one_class', _t( 'Sidebar One width class:' ), 'optionscontrol_text' );
-			$ui->sidebar_one_style->helptext = _t( 'Class for controlling width of sidebar one (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
-			$ui->sidebar_one_style->class = 'clear';
-			$ui->sidebar_one_style->raw = 'true';
-		$ui->append( 'text', 'content_style', strtolower( get_class( $this ) ) . '__content_class', _t( 'Content width class:' ), 'optionscontrol_text' );
-			$ui->content_style->helptext = _t( 'Class for controlling width of main content (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
-			$ui->content_style->class = 'clear';
-			$ui->content_style->raw = 'true';
-		$ui->append( 'text', 'sidebar_two_style', strtolower( get_class( $this ) ) . '__sidebar_two_class', _t( 'Sidebar Two width class:' ), 'optionscontrol_text' );
-			$ui->sidebar_two_style->helptext = _t( 'Class for controlling width of sidebar two (Use "one", "two", ... , or "sixteen" - total width is sixteen).' );
-			$ui->sidebar_two_style->class = 'clear';
-			$ui->sidebar_two_style->raw = 'true';
+        // Widths for the width class options (these are from the Skeleton base).
+        $widths = array ( 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen');
+        $ui->append( 'fieldset', 'color_fs', _t( 'Color' ) );
+        $ui->color_fs->append( 'select', 'theme_color', 
+                                strtolower( get_class( $this ) ) . '__theme_color', 
+                                _t( 'Color scheme:' ), 
+                                array(  'custom.css' => 'custom',
+                                        'gray.css' => 'gray',
+			                          ),
+			                    'formcontrol_select' );
+		$ui->append( 'fieldset', 'column_widths', _t( 'Column widths' ) );
+		$ui->column_widths->append('static','info', _t( '<p>Set column widths for theme areas.  These use the 16 column scheme from skeleton.</p><br />') );
+		$ui->column_widths->append( 'select', 
+		                            'sidebar_one_style', 
+		                            strtolower( get_class( $this ) ) . '__sidebar_one_class', 
+		                            _t( 'Sidebar One width class:' ), 
+		                            $widths );
+		$ui->column_widths->append( 'select', 
+		                            'content_style', 
+		                            strtolower( get_class( $this ) ) . '__content_class', 
+		                            _t( 'Content width class:' ), 
+		                            $widths );			
+		$ui->column_widths->append( 'select', 
+		                            'sidebar_two_style', 
+		                            strtolower( get_class( $this ) ) . '__sidebar_two_class', 
+		                            _t( 'Sidebar Two width class:' ), 
+		                            $widths );		
 
 		// Save
 		$ui->append( 'submit', 'save', _t( 'Save' ) );
