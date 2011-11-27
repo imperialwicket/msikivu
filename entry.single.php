@@ -4,7 +4,7 @@
 	<div id="content">
 	    <?php $theme->display('sidebarone'); ?>
 		<!--begin primary content-->
-		<div id="primaryContent" class="<?php echo $theme->get_config_option('content_class'); ?> columns">
+		<div id="primaryContent" class="<?php echo $content_style; ?> columns">
 			<!--begin single post navigation-->
 			<div id="post-nav">
 				<?php if ( $previous = $post->ascend() ): ?>

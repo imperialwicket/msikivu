@@ -30,24 +30,32 @@ class Msikivu extends Theme
 		Format::apply_with_hook_params( 'more', 'post_content_excerpt', 'more',60, 1 );
 		// Format the calendar like date for home, entry.single and entry.multiple templates
 		Format::apply( 'format_date', 'post_pubdate_out','{Y}-{m}-{j}' );
-		
-		// Since the theme display depends on these values,
-		// set sensible defaults upon init if there are no options present.
-		if ( Options::get( strtolower( get_class( $this ) ) . '__theme_color' ) ){
-		    Options::set( strtolower( get_class( $this ) ) . '__theme_color' , 'custom.css');
-		}
-		if ( Options::get( strtolower( get_class( $this ) ) . '__sidebar_one_style' ) ){
-		    Options::set( strtolower( get_class( $this ) ) . '__sidebar_one_style' , 'four');
-		}
-		if ( Options::get( strtolower( get_class( $this ) ) . '__content_style' ) ){
-		    Options::set( strtolower( get_class( $this ) ) . '__content_style' , 'eight');
-		}
-		if ( Options::get( strtolower( get_class( $this ) ) . '__sidebar_two_style' ) ){
-		    Options::set( strtolower( get_class( $this ) ) . '__sidebar_two_style' , 'four');
-		}
-		    
 	}
 
+    var $defaults = array(
+		'theme_color' => 'custom',
+		'banner_one_style' => 'sixteen',
+		'banner_two_style' => 'eight',
+		'banner_three_style' => 'eight',
+		'sidebar_one_style' => 'four',
+		'content_style' => 'eight',
+		'sidebar_two_style' => 'four',
+		'footer_one_style' => 'eight',
+		'footer_two_style' => 'eight',
+		'footer_three_style' => 'sixteen',
+		);
+
+	/**
+	 * On theme activation, set the default options
+	 */
+	public function action_theme_activated()
+	{
+		$opts = Options::get_group( strtolower( get_class( $this ) ) );
+		if ( empty( $opts ) ) {
+			Options::set_group( strtolower( get_class( $this ) ), $this->defaults );
+		}
+    }
+    
 	/**
 	 * Add additional template variables to the template output.
 	 *
@@ -85,7 +93,20 @@ class Msikivu extends Theme
 				$this->tags_msg = _t('Posts tagged with %s and not with %s', array(Format::tag_and_list($this->include_tag), Format::tag_and_list($this->exclude_tag)));
 			}
 		}
-
+        
+		// Use theme options to set values that can be used directly in the templates
+		$opts = Options::get_group( strtolower( get_class( $this ) ) );
+		$this->assign( 'theme_color', $opts['theme_color'] );
+		$this->assign( 'banner_one_style', $opts['banner_one_style'] );
+		$this->assign( 'banner_two_style', $opts['banner_two_style'] );
+		$this->assign( 'banner_three_style', $opts['banner_three_style'] );
+		$this->assign( 'sidebar_one_style', $opts['sidebar_one_style'] );
+		$this->assign( 'content_style', $opts['content_style'] );
+		$this->assign( 'sidebar_two_style', $opts['sidebar_two_style'] );
+		$this->assign( 'footer_one_style', $opts['footer_one_style'] );
+		$this->assign( 'footer_two_style', $opts['footer_two_style'] );
+		$this->assign( 'footer_three_style', $opts['footer_three_style'] );			
+        
 		parent::add_template_vars();
 		
 	}
@@ -134,7 +155,23 @@ class Msikivu extends Theme
         $ui = new FormUI( strtolower( get_class( $this ) ) );
         
         // Widths for the width class options (these are from the Skeleton base).
-        $widths = array ( 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen');
+        $widths = array ( 'zero'=>'zero', 
+                          'one'=>'one', 
+                          'two'=>'two', 
+                          'three'=>'three', 
+                          'four'=>'four', 
+                          'five'=>'five', 
+                          'six'=>'six', 
+                          'seven'=>'seven', 
+                          'eight'=>'eight', 
+                          'nine'=>'nine', 
+                          'ten'=>'ten', 
+                          'eleven'=>'eleven', 
+                          'twelve'=>'twelve', 
+                          'thirteen'=>'thirteen', 
+                          'fourteen'=>'fourteen', 
+                          'fifteen'=>'fifteen', 
+                          'sixteen'=>'sixteen');
         $ui->append( 'fieldset', 'color_fs', _t( 'Color' ) );
         $ui->color_fs->append( 'select', 'theme_color', 
                                 strtolower( get_class( $this ) ) . '__theme_color', 
@@ -146,21 +183,50 @@ class Msikivu extends Theme
 		$ui->append( 'fieldset', 'column_widths', _t( 'Column widths' ) );
 		$ui->column_widths->append('static','info', _t( '<p>Set column widths for theme areas.  These use the 16 column scheme from skeleton.</p><br />') );
 		$ui->column_widths->append( 'select', 
+		                            'banner_one_style', 
+		                            strtolower( get_class( $this ) ) . '__banner_one_style', 
+		                            _t( 'Banner One width class:' ), 
+		                            $widths );
+		$ui->column_widths->append( 'select', 
+		                            'banner_two_style', 
+		                            strtolower( get_class( $this ) ) . '__banner_two_style', 
+		                            _t( 'Banner Two width class:' ), 
+		                            $widths );
+        $ui->column_widths->append( 'select', 
+		                            'banner_three_style', 
+		                            strtolower( get_class( $this ) ) . '__banner_three_style', 
+		                            _t( 'Banner Three width class:' ), 
+		                            $widths );		                            
+		$ui->column_widths->append( 'select', 
 		                            'sidebar_one_style', 
-		                            strtolower( get_class( $this ) ) . '__sidebar_one_class', 
+		                            strtolower( get_class( $this ) ) . '__sidebar_one_style', 
 		                            _t( 'Sidebar One width class:' ), 
 		                            $widths );
 		$ui->column_widths->append( 'select', 
 		                            'content_style', 
-		                            strtolower( get_class( $this ) ) . '__content_class', 
+		                            strtolower( get_class( $this ) ) . '__content_style', 
 		                            _t( 'Content width class:' ), 
 		                            $widths );			
 		$ui->column_widths->append( 'select', 
 		                            'sidebar_two_style', 
-		                            strtolower( get_class( $this ) ) . '__sidebar_two_class', 
+		                            strtolower( get_class( $this ) ) . '__sidebar_two_style', 
 		                            _t( 'Sidebar Two width class:' ), 
-		                            $widths );		
-
+		                            $widths );
+        $ui->column_widths->append( 'select', 
+		                            'footer_one_style', 
+		                            strtolower( get_class( $this ) ) . '__footer_one_style', 
+		                            _t( 'Footer One width class:' ), 
+		                            $widths );		                            
+        $ui->column_widths->append( 'select', 
+		                            'footer_two_style', 
+		                            strtolower( get_class( $this ) ) . '__footer_two_style', 
+		                            _t( 'Footer Two width class:' ), 
+		                            $widths );
+        $ui->column_widths->append( 'select', 
+		                            'footer_three_style', 
+		                            strtolower( get_class( $this ) ) . '__footer_three_style', 
+		                            _t( 'Footer Three width class:' ), 
+		                            $widths );		                            
 		// Save
 		$ui->append( 'submit', 'save', _t( 'Save' ) );
 		$ui->set_option( 'success_message', _t( 'Options saved' ) );

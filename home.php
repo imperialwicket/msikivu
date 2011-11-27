@@ -1,10 +1,10 @@
 <?php if ( !defined( 'HABARI_PATH' ) ) { die('No direct access'); } ?>
 <?php $theme->display ( 'header' ); ?>
 <!--begin content-->
-	<div id="content">
+	<div id="content" class="clearfix">
 		<?php $theme->display('sidebarone'); ?>
 		<!--begin primary content-->
-		<div id="primaryContent" class="<?php echo $theme->get_config_option('content_class'); ?> columns">
+		<div id="primaryContent" class="<?php echo $content_style; ?> columns">
 			<!--begin loop-->
 			<?php foreach ( $posts as $post ) { ?>
 				<div id="post-<?php echo $post->id; ?>" class="<?php echo $post->statusname; ?>">

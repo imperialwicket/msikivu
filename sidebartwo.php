@@ -1,6 +1,6 @@
 <?php if ( !defined( 'HABARI_PATH' ) ) { die('No direct access'); } ?>
-	<!--begin secondary content-->
-	<div id="sidebartwo" class="<?php echo $theme->get_config_option('sidebar_two_class'); ?> columns">
-    	<?php $theme->area( 'sidebartwo' ); ?>
-	</div>
-	<!--end secondary content-->
+<!--begin sidebartwo-->
+<div id="sidebartwo" class="<?php echo $sidebar_two_style; ?> columns">
+	<?php $theme->area( 'sidebartwo' ); ?>
+</div>
+<!--end sidebartwo-->

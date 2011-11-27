@@ -4,7 +4,7 @@
 	<div id="content">
     	<?php $theme->display('sidebarone'); ?>
 		<!--begin primary content-->
-		<div id="primaryContent" class="<?php echo $theme->get_config_option('content_class'); ?> columns">
+		<div id="primaryContent" class="<?php echo $content_style; ?> columns">
 			<!--begin loop-->
 			<!--returns tag name in heading-->
 			<h2 class="prepend-2"><?php echo $tags_msg; ?></h2>
