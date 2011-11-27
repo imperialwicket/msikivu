@@ -21,21 +21,17 @@ pre {
 }
 
 img.right {
-	border: 1px solid #666;
-	padding: 3px;
+	
 	margin-left: 8px;
 }
 
 img.left {
-	border: 1px solid #666;
-	padding: 3px;
 	margin-right: 8px;
 }
- 
-/* Remove border around linked images */
 
 img {
-	border: 0;
+    border: 1px solid #666;
+	padding: 3px;
 }
 
 /* =Headings
