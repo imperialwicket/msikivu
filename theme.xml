@@ -6,7 +6,7 @@
 	
 	<author url="http://imperialwicket.com/">Nicholas Whittier</author>
 	
-	<version>1.7.1</version>
+	<version>0.7.1</version>
 	<url>http://imperialwicket.com/</url>
 	<description><![CDATA[<p>Msikivu, Swahili for responsive, is based on the Mzingi theme for Habari and uses the <a href="http://www.getskeleton.com/">Skeleton</a> responsive boilerplate.  Msikivu is intended as a responsive starter theme for Habari.</p><br />
 	<p>Msikivu includes a number of theme options for configurability without the necessity of code modifications.  Column widths,
