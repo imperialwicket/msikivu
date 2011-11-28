@@ -1,6 +1,6 @@
 Msikivu, Swahili for responsive, is based on the Mzingi theme for Habari and uses the Skeleton (v1.1) responsive boilerplate. Msikivu is intended as a responsive starter theme for Habari. 
 
-Msikivu comes with several color schemes and an empty 'msikivu_custom.css' stylesheet for simple customization.  It also allows use of Skeleton's column system for controlling are widths.
+Msikivu comes with several color schemes and an empty 'msikivu_custom.css' stylesheet for simple customization.  It also allows use of Skeleton's column system for controlling area widths.
 
 Mzingi is available in Habari Core.
 
