@@ -16,7 +16,6 @@
     #Mobile (Portrait)
     #Mobile (Landscape)
     #Clearing */
-
     
     
 /* #Base 1200 Grid
@@ -67,7 +66,6 @@
     .container .offset-by-thirteen              { padding-left: 975px; }
     .container .offset-by-fourteen              { padding-left: 1050px; }
     .container .offset-by-fifteen               { padding-left: 1125px; }
-
 
 
 /* #960 Grid
@@ -219,7 +217,6 @@
         .container .offset-by-thirteen,
         .container .offset-by-fourteen,
         .container .offset-by-fifteen { padding-left: 0; }
-
     }
 
 
@@ -287,4 +284,3 @@
       width: 0;
       height: 0;
     }
-
