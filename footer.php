@@ -1,6 +1,7 @@
 <?php if ( !defined( 'HABARI_PATH' ) ) { die('No direct access'); } ?>
+<section id="footer-wrapper">
 	<!--begin footer-->
-	<div id="footer" class="sixteen columns">
+	<div id="footer" class=" container">
         <!--begin footerone-->
         <div id="footerone" class="<?php echo $footer_one_style; ?> columns">
             <?php $theme->area( 'footerone' ); ?>
@@ -20,7 +21,7 @@
 	<?php $theme->footer(); ?>
 	</div>
 	<!--end footer-->
-</div>
+</section>
 <!--end wrapper-->
 </body>
 </html>

@@ -1,7 +1,8 @@
 <?php if ( !defined( 'HABARI_PATH' ) ) { die('No direct access'); } ?>
 <?php $theme->display ( 'header' ); ?>
+<section id="content-wrapper">
 <!--begin content-->
-	<div id="content" class="clearfix">
+	<div id="content" class="container clearfix">
 		<?php $theme->display('sidebarone'); ?>
 		<!--begin primary content-->
 		<div id="primaryContent" class="<?php echo $content_style; ?> columns">
@@ -35,5 +36,6 @@
 		<!--end primary content-->
    	    <?php $theme->display('sidebartwo'); ?>
 	</div>
+</section>
 	<!--end content-->
 	<?php $theme->display ( 'footer' ); ?>

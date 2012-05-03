@@ -24,31 +24,35 @@
 	<?php $theme->header(); ?>
 </head>
 <body class="<?php $theme->body_class(); ?>">
-	<!--begin wrapper-->
-	<div class="container">
+	<section id="masthead-wrapper">
 		<!--begin masthead-->
-		<div id="masthead"  class="sixteen columns">
+		<div id="masthead"  class="container">
 			<div id="branding">
 				<h1><a href="<?php Site::out_url( 'habari'); ?>" title="<?php Options::out( 'title' ); ?>"> <?php Options::out( 'title' ); ?></a></h1>
 				<h3><em><?php Options::out( 'tagline' ); ?></em></h3>
 			</div>
 		</div>
 		<!--end masthead-->
+	</section>
+	<section id="navigation-wrapper">
 		<!--begin navigation-->
-		<div id="navigation" class="sixteen columns">
+		<div id="navigation" class="container">
 		    <ul id="nav">
-		    <li><a href="<?php Site::out_url( 'habari' ); ?>"><?php _e('Home'); ?></a></li>
+		    <li<?php echo ($request->display_home) ? ' class=current' : ''; ?>><a href="<?php Site::out_url( 'habari' ); ?>"><?php _e('Home'); ?></a></li>
 		    <?php
 		    // List Pages
 		    foreach ( $pages as $page ) {
-			    echo '<li><a href="' . $page->permalink . '" title="' . $page->title . '">' . $page->title . '</a></li>' . "\n";
+			    echo (isset($post) && $post->slug == $page->slug) ? '<li class="current">' : '<li>';
+			    echo '<a href="' . $page->permalink . '" title="' . $page->title . '">' . $page->title . '</a></li>' . "\n";
 		    }
 		    ?>
 	        </ul>
 	    </div>
 	    <!--end navigation-->
+	</section>
+	<section id="banners-wrapper">	    
         <!--begin banners-->
-        <div id="banners" class="sixteen columns">
+        <div id="banners" class="container sixteen columns">
             <!--begin bannerone-->
             <div id="bannerone" class="<?php echo $banner_one_style; ?> columns">
 	            <?php $theme->area( 'bannerone' ); ?>
@@ -66,4 +70,4 @@
             <!--end bannerthree-->
         </div>
         <!--end banners-->
-
+    </section>
