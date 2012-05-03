@@ -4,17 +4,17 @@
 	<div id="footer" class=" container">
         <!--begin footerone-->
         <div id="footerone" class="<?php echo $footer_one_style; ?> columns">
-            <?php $theme->area( 'footerone' ); ?>
+            <?php echo $theme->area( 'footerone' ); ?>
         </div>
         <!--end footerone-->
         <!--begin footertwo-->
         <div id="footertwo" class="<?php echo $footer_two_style; ?> columns">
-            <?php $theme->area( 'footertwo' ); ?>
+            <?php echo $theme->area( 'footertwo' ); ?>
         </div>
         <!--end footertwo-->
         <!--begin footerthree-->
         <div id="footerthree" class="<?php echo $footer_three_style; ?> columns">
-            <?php $theme->area( 'footerthree' ); ?>
+            <?php echo $theme->area( 'footerthree' ); ?>
         </div>
         <!--end footerthree-->
 	<p><?php Options::out('title'); ?> <?php _e('is powered by'); ?> <a href="http://www.habariproject.org/" title="Habari">Habari</a></p>

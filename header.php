@@ -55,17 +55,17 @@
         <div id="banners" class="container sixteen columns">
             <!--begin bannerone-->
             <div id="bannerone" class="<?php echo $banner_one_style; ?> columns">
-	            <?php $theme->area( 'bannerone' ); ?>
+	            <?php echo $theme->area( 'bannerone' ); ?>
             </div>
             <!--end bannerone-->
             <!--begin bannertwo-->
             <div id="bannertwo" class="<?php echo $banner_two_style; ?> columns">
-	            <?php $theme->area( 'bannertwo' ); ?>
+	            <?php echo $theme->area( 'bannertwo' ); ?>
             </div>
             <!--end bannertwo-->
             <!--begin bannerthree-->
             <div id="bannerthree" class="<?php echo $banner_three_style; ?> columns">
-	            <?php $theme->area( 'bannerthree' ); ?>
+	            <?php echo $theme->area( 'bannerthree' ); ?>
             </div>
             <!--end bannerthree-->
         </div>
