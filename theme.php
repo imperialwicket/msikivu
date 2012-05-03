@@ -178,6 +178,7 @@ class Msikivu extends Theme
                                 _t( 'Color scheme:' ), 
                                 array(  'custom.css' => 'custom',
                                         'gray.css' => 'gray',
+                                        'blue.css' => 'blue',
 			                          ),
 			                    'formcontrol_select' );
 		$ui->append( 'fieldset', 'column_widths', _t( 'Column widths' ) );
