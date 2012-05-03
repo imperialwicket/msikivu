@@ -50,9 +50,9 @@
 	    </div>
 	    <!--end navigation-->
 	</section>
-	<section id="banners-wrapper">	    
+	<section id="banners-wrapper" class="container">	    
         <!--begin banners-->
-        <div id="banners" class="container sixteen columns">
+        <div id="banners" class="sixteen columns">
             <!--begin bannerone-->
             <div id="bannerone" class="<?php echo $banner_one_style; ?> columns">
 	            <?php echo $theme->area( 'bannerone' ); ?>
