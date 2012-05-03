@@ -2,7 +2,7 @@
 <?php $theme->display ( 'header' ); ?>
 <!--begin content-->
 	<div id="page">
-	<div id="content">
+	<div id="content" class="container clearfix">
 		<?php $theme->display ( 'sidebarone' ); ?>	
 		<!--begin primary content-->
 		<div id="primaryContent" class="<?php echo $content_style; ?> columns">
